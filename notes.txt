@@ -1,0 +1,48 @@
+There are some hidden sections in the MS Word document that appear to have been pulled in by pandoc.
+These have now been moved into files called hidden-section-n.adoc
+Placeholders have been added to clause 6 where the hidden sections were extracted from.
+
+
+Figure A‑13 is difficult to read (og)
+
+check that all figures that are in the MS Word are also in the Asciidoc
+
+
+1-
+2-
+3-
+4-
+5-
+6-add
+7-
+8-
+9-
+10-
+11-
+12-
+13-
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23-
+24-
+25-
+26-
+27-
+28-
+29
+30
+31-
+32-
+33-
+34-
+35-
+36-
+37-
+38-

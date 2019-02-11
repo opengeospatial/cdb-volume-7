@@ -1,0 +1,58 @@
+[big]*i.     Abstract*
+
+
+This CDB Volume provides Guidelines, Clarifications, Rationales, Primers, and additional information for the definition and use of various models that can be stored in a CDB compliant data store.
+
+Please note that the term “lineal” has been replaced with the term “line” or “linear” throughout this document
+
+Please note that the term “areal” has been replaced with the term “polygon” throughout this document.
+
+
+
+[big]*ii.    Keywords*
+
+The following are keywords to be used by search engines and document catalogues.
+
+ogcdoc, OGC document,  ogcdoc,  cdb, models, guidance, simulation
+
+[big]*iii.   Preface*
+
+
+This document contains material from Annex A in the original CDB 3.2 specification submission to the OGC. These sections provide guidance for model builders to build and maintain model content in a CDB data store.
+
+
+
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
+
+Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.
+
+[big]*iv.    Submitting organizations*
+
+The following organizations submitted this Document to the Open Geospatial Consortium (OGC):
+
+* CAE Inc.
+* Carl Reed, OGC Individual Member
+* Envitia, Ltd
+* Glen Johnson, OGC Individual Member
+* KaDSci, LLC
+* Laval University
+* Open Site Plan
+* University of Calgary
+* UK Met Office
+
+
+The OGC CDB standard is based on and derived from an industry developed and maintained specification, which has been approved and published as OGC Document 15-003: OGC Common Data Base Volume 1 Main Body. An extensive listing of contributors to the legacy industry-led CDB specification is at Chapter 11, pp 475-476 in that OGC Best Practices Document (https://portal.opengeospatial.org/files/?artifact_id=61935 )
+
+
+
+[big]*v.     Submitters*
+
+All questions regarding this submission should be directed to the editor or the submitters:
+
+
+[cols=",",]
+|=================================
+|Name |Affiliation
+|Carl Reed |Carl Reed & Associates
+|David Graham |CAE Inc.
+|=================================

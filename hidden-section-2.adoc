@@ -1,0 +1,319 @@
+*Figure A‑30: Compacting the T3DModels Dataset Hierarchy*
+
+* *CDB LOD versus T3DModel Significant Size *
+
+
+Chapter 6 provides a set of guidelines to establish the values for Significant Size SS~c~ and SS~LOD~ for T3D Models (for both lineals and areals).
+
+Table A‑10: T3DModel LOD vs. Significant Size shows us the relationship between SS~c~ and SS~LOD~. They are offset by 3 LODs. The implication of this statement is in the case of a model with two LOD, the finer 3DModel-LOD must have sufficient detail to justify its existence.
+
+_Note:_ Each of the 3DModel-LODs of a 3DModel must differ by at least one CDB LOD. Some 3DModel-LODs will be discarded if this relationship is not respected.
+
+Consider for example a 12m lineal road feature with two modeled representations. The nominal CDB LOD for the coarsest 3DModel-LOD is LOD=3 in accordance to the table below. The Significant Size of the finer 3DModel-LOD is obtained by “walking” around its outline; we determine that the largest value of _d_ for successive vertex triplets is 3m, hence SS~LOD~ = 3m. Table A‑10: T3DModel LOD vs. Significant Size, tells us that the 3DModel-LOD should also be nominally inserted at CDB LOD = 3. Since both 3DModel-LODs have the same nominal CDB LOD, only one of them is retained (preferably the more detailed of the two).
+
+
+*Table* *A‑10: T3DModel LOD vs. Significant Size*
+
+[cols=",,,",options="header",]
+|===============================
+|T2DModel CDB Level a|
+
+Significant Size +
+SS~c +
+~(Coarsest Model-LOD)
+
+
+ a|
+Significant Size
+
+SS~LOD~ +
+(Other Model-LODs)
+
+OTHER Interp.
+
+Max Error with respect to finest
+
+|Tile-LOD Size
+|-10 |- a|
+
+-
+
+
+|-
+|-9 |- a|
+
+-
+
+
+|-
+|-8 |- a|
+
+-
+
+
+|-
+|-7 |56 km < SS < 110 km a|
+
+SS < 14 km
+
+
+|110 km
+|-6 |28 km < SS ≤ 56 km a|
+
+SS < 6.9 km
+
+
+|110 km
+|-5 |14 km < SS ≤ 28 km a|
+
+SS < 3.5 km
+
+
+|110 km
+|-4 |6.9 km < SS ≤ 14 km a|
+
+SS < 1.7 km
+
+
+|110 km
+|-3 |3.4 km < SS ≤ 6.9 km a|
+
+SS < 870 m
+
+
+|110 km
+|-2 |1.7 km < SS ≤ 3.4 km a|
+
+SS < 430 m
+
+
+|110 km
+|-1 |860 m < SS ≤ 1.7 km a|
+
+SS < 220 m
+
+
+|110 km
+|0 |430 m < SS ≤ 860 m a|
+
+SS < 110 m
+
+
+|110 km
+|1 |220 m < SS ≤ 430 m a|
+
+SS < 54 m
+
+
+|56 km
+|2 |110 m < SS ≤ 220 m a|
+
+SS < 27 m
+
+
+|28 km
+|3 |54 m < SS ≤ 110 m a|
+
+SS < 13 m
+
+
+|14 km
+|4 |27 m < SS ≤ 54 m a|
+
+SS < 6.8 m
+
+
+|6.9 km
+|5 |13 m < SS ≤ 27 m a|
+
+SS < 3.4 m
+
+
+|3.4 km
+|6 |6.7 m < SS ≤ 13 m a|
+
+SS < 1.7 m
+
+
+|1.7 km
+|7 |3.4 m < SS ≤ 6.7 m a|
+
+SS < 840 mm
+
+
+|860 m
+|8 |1.7 m < SS ≤ 3.4 m a|
+
+SS < 420 mm
+
+
+|430 m
+|9 |840 mm < SS ≤ 1.7 m a|
+
+SS < 210 mm
+
+
+|220 m
+|10 |420 mm < SS ≤ 840 mm a|
+
+SS < 110 mm
+
+
+|110 m
+|11 |210 mm < SS ≤ 420 mm a|
+
+SS < 52 mm
+
+
+|54 m
+|12 |110 mm < SS ≤ 210 mm a|
+
+SS < 26 mm
+
+
+|27 m
+|13 |52 mm < SS ≤ 110 mm a|
+
+SS < 13 mm
+
+
+|13 m
+|14 |26 mm < SS ≤ 52 mm a|
+
+SS < 6.6 mm
+
+
+|6.7 m
+|15 |13 mm < SS ≤ 26 mm a|
+
+SS < 3.3 mm
+
+
+|3.4 m
+|16 |6.7 mm < SS ≤ 13 mm a|
+
+SS < 1.6 mm
+
+
+|1.7 m
+|17 |3.4 mm < SS ≤ 6.7 mm a|
+
+SS < 820 um
+
+
+|840 mm
+|18 |1.7 mm < SS ≤ 3.4 mm a|
+
+SS < 410 um
+
+
+|420 mm
+|19 |820 um < SS ≤ 1.7 mm a|
+
+SS < 210 um
+
+
+|210 mm
+|20 |410 um < SS ≤ 820 um a|
+
+SS < 100 um
+
+
+|110 mm
+|21 |210 um < SS ≤ 410 um a|
+
+SS < 51 um
+
+
+|52 mm
+|22 |110 um < SS ≤ 210 um a|
+
+SS < 26 um
+
+
+|26 mm
+|23 |SS ≤ 110 um a|
+
+SS < 13 um
+
+
+|13 mm
+|===============================
+
+* *Rules Governing T3DModel LOD Hierarchy*
+
+
+Here is a summary of the rules required by the specification in order to ensure deterministic operation from client-devices:
+
+
+1. Each feature may have multiple modeled representations at progressively coarser levels of detail. Each of the modeled representations is referred to as a 3DModel-LOD. In absence of pre-modeled coarser LOD representations, the tools may automatically generate coarser modeled levels-of-detail.
+2. A 3DModel-LOD consists of a group of polygons that represent a feature at a specific level-of-detail; this group of polygons shares a common Feature Attribute Code (FACC), a Feature Sub-Code (FSC), a Model Name (MODL) and 3DModel-LOD’s Significant Size _SS’~LOD~_.
+3.  Each 3DModel has a distinct Significant Size value _SS’_ based on its dimensions. In turn, each of the 3DModel-LODs of a 3DModel has a distinct Significant Size value _SS’~LOD~_ based on its modeled accuracy.
+4. Insertion of a 3DModel-LOD into the T3DModel Dataset hierarchy proceeds as follows. Starting with LODmax (LODmax is a variable set by the user that sets the maximum depth of the LOD hierarchy) and progressing to coarser LODs…
+
+a. For each Tile-LOD, create a Model_List that is constructed from the 3DModel-LODs that straddle the Tile-LOD.
+
+a.  If the 3DModel-LOD is not the coarsest LOD and its Significant Size is in accordance to Table A‑10: T3DModel LOD vs. Significant Sizethen iteratively simplify the 3DModel-LOD (iterate until its Significant Size is no longer in accordance to Table A‑10: T3DModel LOD vs. Significant Size and keep results of previous iteration) and add it to the Tile-LOD. Only the coarser 3DModel-LODs of this 3DModel are available for future insertion into the T3DModel hierarchy.
+b.  If the 3DModel-LOD is the coarsest LOD of the 3DModel and its Significant Size is in accordance to Table A‑10: T3DModel LOD vs. Significant Size insert it at this LOD of the hierarchy. If the 2DModel-LOD matches the Tile-LOD, remove it from the list for the processing of the coarser Tile-LOD.
+b.  If the Model_List is less than _T3DModelFileSize_, no further processing is required.
+c.  The Model_List of each Tile-LOD is sorted in decreasing order of Diff, where Diff is the difference between the Significant Size _SS_ of the Model and the Significant Size as specified in Table 3.
+d.  If the Model_List is greater than _T3DModelFileSize_, then (starting with the first entry in the sorted Model_List), Models are simplified one-by-one until the size of the Model_List is less than _T3DModelFileSize_. When a simplification occurs, the Model_List is re-sorted using the Diff value.
+e.  If a) the Model_List is deemed non-reducible and b) the Model_List is still greater than _T3DModelFileSize_ …
+a.  If LOD latexmath:[$<$] LODmax, then…
+
+1.  a Temp_Model_List is created and initialized with the contents of the Model_list. Starting from the end of the Model_List, Models are removed one-by-one from the Model_list (starting with the first Model in the Model_List) and are copied into the Temp_Model_List until the Model_List reaches _T3DModelFileSize_.
+2.  The Temp_Model_List is merged to the children Tile-LODs and the children are re-processed using steps 4a to 4e. The process is iterative, ie. the “overflow” is propagated into the finer LODs of the T3DModel hierarchy.
+a.  Else…
+
+1.  Models are removed one-by-one, starting with the first Model in the Model_List, until the Model_List is less than _T3DModelFileSize_.  The corresponding T3DModels are removed from the CDB and a warning is issued stating that content was removed.
+
+NOTE: The algorithm preserves the highest available modeled content while ensuring that the runtime constraint file size limits are respected. While the CDB data model allows for infinitely-sized 3DModel-LODs, a client-device may refuse to render the 3DModel-LOD if it has insufficient memory to load all of the OpenFlight files that make-up the 3DModel-LOD.
+
+1.  Each T3DModel Tile-LOD is subject to an OpenFlight file size limit of _T3DModelFileSize_, i.e. several OpenFlight files, each within the _T3DModelFileSize_ limit, can be used to represent a very complex T3DModel Tile-LOD. Each of T3DModel-LODs of an T3DModel Tile-LOD share the same T3DModel-LOD Identifier (see rule 2)
+2.  Each Tile-LOD is subject to a file size limit of _T3DModelFileSize_.
+3.  All of the 3DModel-LODs in a T3DModel Tile-LOD are nominally exchange-LODs (see exception in next rule).
+4. The depth of the T3DModel LOD hierarchy should be reduced by folding-in the Tile-Models_List of finer Tile-LODs as an additive LOD to the Tile-Model_List of a coarser Tile-LOD. Failure to perform this “compaction step” may result in significantly deeper T3DModel LOD hierarchy when the finest 3DModel-LODs consist of small details (e.g. thin stripes and markings on roads), and reduce the paging performance of client-devices.
+5. The finer modeled representation of an T3DModel (i.e. a 3DModel-LOD with a smaller Significant Size) always appears in finer LODs of the Tile-LOD hierarchy than a coarser 3DModel-LOD.
+6. A Tile-LOD cannot contain more than one 3DModel-LOD of the same T3DModel.
+7.  All T3DModels are clipped against the Tile-LOD boundaries.
+8. Gaps in the LOD file hierarchy of the T3DModel Dataset are not permitted. This may result in Tile-LODs that are empty (e.g. without any T3DModels). The presence of an empty Tile-LOD file indicates the availability of content in T3DModel files located in finer LODs of the T3DModel hierarchy.
+
+* *T3DModel Geometry*
+
+_To be completed…_
+
+* *T3DModel Texture*
+
+This section establishes the means by which textures are generated, stored and referenced by T3DModel OpenFlight files.
+
+The files are grouped by dataset component into Tile-LOD archive files. All of the files stored in these archives have the following naming convention. All of the files stored in these archives have the following naming convention:
+
+A11B222_D111_S222_T333_L44_U5_R6_NAME.xxx
+
+This file naming convention ensures that all files have unique filenames. Numeric characters in the above convention stand for ASCII characters corresponding to decimal digit. The number of numeric characters represents the minimum length required to represent the value, more are used if and only if necessary. Each set is delimited either by an alphabetic character or an underscore. Character meaning is explained in Table A‑11: T3DModel File Naming Convention (within archives).
+
+
+*Table* *A‑11: T3DModel File Naming Convention (within archives)*
+
+[cols=",",]
+|=============================================================================================================================================================
+|*Character* |*Description*
+|A |Latitude direction (N or S character)
+| |
+| |
+| |
+| |
+| |
+| |
+| |
+| |
+| |
+|NAME |For the T3DModelTexture and T3DModelMaterial datasets, NAME represents the texture name (TNAM), a user-defined name containing from 2 to 32 characters.
+|xxx a|
+File extension within the zipped archive file type which contains files types listed as per Section xxx, xxx for the corresponding dataset.
+
+* T3DModelTexture files contain textures in SGI (*.rgb) format.
+* T3DModelMaterial files contain material information in TIFF (*.tif) format.
+
+
+|=============================================================================================================================================================

@@ -1,0 +1,16 @@
+As an example, consider a 3DModel of college building located in Clarksville, TN.
+
+The 3DModel representation is stored within an OpenFlight Tile-LOD (archive) file. The 3DModel is tagged with a Model Identifier embedded within an OpenFlight Group Node. The Model Identifier is AL015-015-College based on the model’s FACC-FSC and MODL. The OpenFlight Tile-LOD file is:
+
+\CDB\Tiles\N36\W088\320_T3DModelGeometry\Lxx\Uxx\ +
+N36W088_D320_Sxxx_Txxx_Lxx_Ux_Rx.flt
+
+The T3DModel Texture and T3DModel Material maps are represented by the following set of files:
+
+\CDB\Tiles\N36\W088\321_T3DModelTexture\Lxx\Uxx\
+
+N36W088_D321_Sxxx_Txxx_Lxx_Ux_Rx_CollegeBuilding.rgb
+
+\CDB\Tiles\N36\W088\322_T3DModelMaterial\Lxx\Uxx\
+
+N36W088_D322_Sxxx_Txxx_Lxx_Ux_Rx_CollegeBuilding.tif

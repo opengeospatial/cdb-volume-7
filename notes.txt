@@ -7,7 +7,7 @@ Figure A‑13 is difficult to read (og)
 <<NOTE: SWG is looking for better graphic.>>
 
 check that all figures that are in the MS Word are also in the Asciidoc
-
+<<NOTE: All Checked. Figure A-10 was missing. Was added.>>
 
 1-
 2-

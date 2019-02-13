@@ -1,9 +1,10 @@
 There are some hidden sections in the MS Word document that appear to have been pulled in by pandoc.
 These have now been moved into files called hidden-section-n.adoc
 Placeholders have been added to clause 6 where the hidden sections were extracted from.
-
+<<NOTE. These hidden sections are content that was discussed for inclusion in Version 3.2 of CDB. This was prior to submission to the OGC. The user voted not to include the content. We can delete the Hidden file content from the Git Repo once the SWG agrees.>>
 
 Figure A‑13 is difficult to read (og)
+<<NOTE: SWG is looking for better graphic.>>
 
 check that all figures that are in the MS Word are also in the Asciidoc
 

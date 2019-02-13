@@ -444,6 +444,7 @@ The application of a constraint point P is applied as follows.
 . The x,y address of the affected terrain grid element is computed by truncating the lat-long coordinates of point P; note that the truncation operation varies in accordance to LOD of the terrain; however, it always yields grid element addresses in the range of 0-1023.
 .  The x,y offset of the affected terrain grid element is computed by performing a MOD of the lat-long coordinates of point P in accordance to its LOD.
 
+image::images/figureA_10.png[width=500]
 *Figure A‑10: Application of Constraint Point – Non-uniform Grid*
 
 ==== Constraint Linear Features

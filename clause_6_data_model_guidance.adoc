@@ -158,50 +158,103 @@ Here is a reminder of what these attributes are. The complete definitions can be
 
 In the diagram above, a model (MODL) is positioned above the ground. This is indicated by the fact that the model’s XY plane does not lie directly on the ground. The distance above the ground is represented by Zr. The diagram clearly shows the relation between HGT, BBH, and Zr.
 
-\[HGT = BBH + Zr\]
+
 //latexmath:[\[HGT = BBH + Zr\]]
+ifndef::backend-pdf[]
+\[HGT = BBH + Zr\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/HGTBBHZr.png[]
+endif::[]
+
 
 When the value of Zr is not readily available from the instance of the feature itself (because AHGT is true), it can be computed using the ground height (Gh).
 
-\[Zr = Za - Gh\]
+
 //latexmath:[\[Zr = Za - Gh\]]
+ifndef::backend-pdf[]
+\[Zr = Za - Gh\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/ZrZaGh.png[]
+endif::[]
 
 The BBH attribute is optional and defaults to twice the value of BSR, which is mandatory for a MODL model.
 
-\[default\ BBH = 2 \times BSR\]
-//latexmath:[\[default\ BBH = 2 \times BSR\]]
 
-\[default\ BBH \geq real\ BBH\]
+//latexmath:[\[default\ BBH = 2 \times BSR\]]
+ifndef::backend-pdf[]
+\[default\ BBH = 2 \times BSR\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/BBH2BSR.png[]
+endif::[]
+
+
 //latexmath:[\[default\ BBH \geq real\ BBH\]]
+ifndef::backend-pdf[]
+\[default\ BBH \geq real\ BBH\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/BBHBBH.png[]
+endif::[]
 
 ==== Typical Use-case
 
 Typically, a model is positioned relative to the ground without any offset. As a result, AHGT is false, and Zr is set to zero. Hence…
 
-\[HGT = BBH\]
+
 //latexmath:[\[HGT = BBH\]]
+ifndef::backend-pdf[]
+\[HGT = BBH\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/HGTBBH.png[]
+endif::[]
 
 ==== Light Points
 
 In the case of airport and environmental light points, no model of a light fixture is provided (the MODL attribute is not allowed). Hence…
 
-\[BSR = 0\  \rightarrow BBH = 0\]
+
 //latexmath:[\[BSR = 0\  \rightarrow BBH = 0\]]
+ifndef::backend-pdf[]
+\[BSR = 0\  \rightarrow BBH = 0\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/BSR0BBH.png[]
+endif::[]
 
 Currently, the light point datasets do not allow the HGT attribute, the client application may have to compute its value using the equation given previously…
 
-\[HGT = BBH + Zr\]
 //latexmath:[\[HGT = BBH + Zr\]]
+ifndef::backend-pdf[]
+\[HGT = BBH + Zr\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/HGTBBHZr.png[]
+endif::[]
 
 where BBH is null.
 
-\[HGT = Zr\]
+
 //latexmath:[\[HGT = Zr\]]
+ifndef::backend-pdf[]
+\[HGT = Zr\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/HGTZr.png[]
+endif::[]
 
 And if the light point is positioned at an absolute height (AHGT is true), then…
 
-\[HGT = Za - Gh\]
 //latexmath:[\[HGT = Za - Gh\]]
+ifndef::backend-pdf[]
+\[HGT = Za - Gh\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/HGTZaGh.png[]
+endif::[]
 
 ==== Recommendation
 
@@ -354,9 +407,14 @@ This section describes the required client-device behavior for PointZ and MultiP
 
 The application of a constraint point P is very much like drawing an anti-aliased rectangle centered on P into the uniform terrain elevation grid. The rectangle shape is defined by feature attributes BBL, BBH and AO1. Consider a terrain grid element A in the immediate vicinity of a constraint point P. After applying the constraint P to terrain grid element A, the new elevation _E~A~_ is:
 
-
-\[E_{A}\  = \ E_{P}*\text{Ain}_{\text{PA}} + \ E_{A}*\ \text{Aout}_{\text{PA}}\ \]
 //latexmath:[\[E_{A}\  = \ E_{P}*\text{Ain}_{\text{PA}} + \ E_{A}*\ \text{Aout}_{\text{PA}}\ \]]
+ifndef::backend-pdf[]
+\[E_{A}\  = \ E_{P}*\text{Ain}_{\text{PA}} + \ E_{A}*\ \text{Aout}_{\text{PA}}\ \]
+endif::[]
+ifdef::backend-pdf[]
+image::math/elevation.png[]
+endif::[]
+
 
 where…
 
@@ -366,8 +424,14 @@ _E~P~_ is elevation of constraint point P
 
 _Ain~PA~_ is the percentage overlap of constraint point P onto grid element A
 
-latexmath:[\text{Aout}_{\text{PA}}] = latexmath:[\left( 1\  - \ \text{Ain}_{\text{PA}} \right)]
+
 //latexmath:[$\text{Aout}_{\text{PA}}$] = latexmath:[$\left( 1\  - \ \text{Ain}_{\text{PA}} \right)$]
+ifndef::backend-pdf[]
+latexmath:[\text{Aout}_{\text{PA}}] = latexmath:[\left( 1\  - \ \text{Ain}_{\text{PA}} \right)]
+endif::[]
+ifdef::backend-pdf[]
+image::math/aout.png[]
+endif::[]
 
 image::images/figureA_7.png[width=800]
 *Figure A‑7: Application of Constraint Point - Uniformly-Sampled Terrain*
@@ -378,18 +442,29 @@ This section describes the required client-device behavior for PolyLineZ feature
 
 First, the PolyLineZ feature is broken into a series of constraint lines. The application of each constraint line L is very much like drawing an anti-aliased line centered on L into the uniform terrain elevation grid. The width of the line is defined by feature attribute WGP. Consider a terrain grid element A in the immediate vicinity of a constraint line L, defined by vertices V1 and V2. After applying the constraint line L to terrain grid element A, the new elevation _E~A~_ is:
 
+ifndef::backend-pdf[]
 \[E_{A}\  = \ E_{\text{LA}}*\text{Ain}_{\text{LA}} + \ E_{A}*\ \text{Aout}_{\text{LA}}\ \]
+endif::[]
+ifdef::backend-pdf[]
+image::math/newelevation.png[]
+endif::[]
+
 
 where…
 
+_E_~A~ is elevation of grid element A
 
-latexmath:[E_{A}] is elevation of grid element A
+_E_~LA~ is interpolated elevation of constraint line L at grid element A
 
-latexmath:[E_{\text{LA}}] is interpolated elevation of constraint line L at grid element A
+Ain~LA~ is the percentage overlap of constraint line L onto grid element A
 
-latexmath:[\text{Ain}_{\text{LA}}] is the percentage overlap of constraint line L onto grid element A
 
+ifndef::backend-pdf[]
 latexmath:[\text{Aout}_{\text{LA}}] = latexmath:[\left( 1\  - \ \text{Ain}_{\text{LA}} \right)]
+endif::[]
+ifdef::backend-pdf[]
+image::math/aout2.png[]
+endif::[]
 
 
 image::images/figureA_8.png[image,width=633]
@@ -407,18 +482,28 @@ Each vector MultiPatch feature consists of a number of rings (or parts). Each ri
 
 The rendering of the vector feature is handled as a series of constraint triangles applied in the order in which they appear within the vector PolygonZ record. The application of each constraint triangle T is very much like drawing an anti-aliased triangle into the uniform terrain elevation grid. Consider a terrain grid element A in the immediate vicinity of a constraint triangle T, defined by vertices V1, V2 and V3. After applying the constraint triangle T to terrain grid element A, the new elevation _E~A~_ is:
 
+ifndef::backend-pdf[]
 \[E_{A}\  = \ E_{\text{TA}}*\text{Ain}_{\text{TA}} + \ E_{A}*\ \text{Aout}_{\text{TA}}\ \]
+endif::[]
+ifdef::backend-pdf[]
+image::math/elevation3.png[]
+endif::[]
 
 where…
 
 
-latexmath:[E_{A}] is elevation of grid element A
+_E_~A~ is elevation of grid element A
 
-latexmath:[E_{\text{TA}}] is interpolated elevation of constraint triangle T at grid element A
+_E_~TA~ is interpolated elevation of constraint triangle T at grid element A
 
-latexmath:[\text{Ain}_{\text{TA}}] is the percentage overlap of constraint line T onto grid element A
+Ain~TA~ is the percentage overlap of constraint line T onto grid element A
 
+ifndef::backend-pdf[]
 latexmath:[\text{Aout}_{\text{PA}}] = latexmath:[\left( 1\  - \ \text{Ain}_{\text{TA}} \right)]
+endif::[]
+ifdef::backend-pdf[]
+image::math/aout3.png[]
+endif::[]
 
 
 image::images/figureA_9.png[width=500]
@@ -1200,11 +1285,15 @@ a.
 
 a.  Compute the model’s Significant Size …
 
-\[SS = \ \sqrt{\frac{\left( 10 \times .96) \times 200 \right) + \ \left( 200 \times 200 \times .259\  \right)}{\pi}}\]
 //latexmath:[\[SS = \ \sqrt{\frac{\left( 10 \times .96) \times 200 \right) + \ \left( 200 \times 200 \times .259\  \right)}{\pi}}\]]
-
-\[SS = \ 62.5m\]
 //latexmath:[\[SS = \ 62.5m\]]
+ifndef::backend-pdf[]
+\[SS = \ \sqrt{\frac{\left( 10 \times .96) \times 200 \right) + \ \left( 200 \times 200 \times .259\  \right)}{\pi}}\]
+\[SS = \ 62.5m\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/ss.png[]
+endif::[]
 
 [start=2]
 a.  Since the model is opaque and has no assigned value for RTAI, the final value for _SS’_ is 62.5m.
@@ -1216,13 +1305,27 @@ a.  *Mid level-of-detail:*
 [start=1]
 a.  Compute the ratio of vertices
 
-\[\ R = \ \frac{V_{\text{LOD}}}{V_{\text{coarsest}}} = \frac{60}{5} = 12\]
+
 //latexmath:[\[\ R = \ \frac{V_{\text{LOD}}}{V_{\text{coarsest}}} = \frac{60}{5} = 12\]]
+ifndef::backend-pdf[]
+\[\ R = \ \frac{V_{\text{LOD}}}{V_{\text{coarsest}}} = \frac{60}{5} = 12\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/rvlod.png[]
+endif::[]
+
 [start=2]
 a. Compute the Significant Size of the GSModel-LOD…
 
-\[{SS'}_{\text{LOD}} = \frac{{SS'}_{\text{coarsest}}}{\sqrt{12}} = 18.04m\]
+
 //latexmath:[\[{SS'}_{\text{LOD}} = \frac{{SS'}_{\text{coarsest}}}{\sqrt{12}} = 18.04m\]]
+ifndef::backend-pdf[]
+\[{SS'}_{\text{LOD}} = \frac{{SS'}_{\text{coarsest}}}{\sqrt{12}} = 18.04m\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/sslod.png[]
+endif::[]
+
 [start=3]
 a.  Since the model is opaque and has no assigned value for RTAI, the final value for _SS’_ is 18.04m.
 b.  Table 3 1: CDB LOD vs. Model Resolution, tells us that the (mid- LOD) of the model should be nominally inserted at LOD = 5 of the Tile-LOD (assuming its file size limit is not exceeded)
@@ -1233,15 +1336,30 @@ a.  *Finest level-of-detail:*
 [start=1]
 a.  Compute the ratio of vertices
 
-\[\ R = \ \frac{V_{\text{LOD}}}{V_{\text{coarsest}}} = \frac{300}{60} = 5\]
+
 //latexmath:[\[\ R = \ \frac{V_{\text{LOD}}}{V_{\text{coarsest}}} = \frac{300}{60} = 5\]]
+ifndef::backend-pdf[]
+\[\ R = \ \frac{V_{\text{LOD}}}{V_{\text{coarsest}}} = \frac{300}{60} = 5\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/rvlod2.png[]
+endif::[]
+
 [start=2]
 a. Compute the Significant Size of the GSModel-LOD…
 
-\[{SS'}_{\text{LOD}} = \frac{{SS'}_{c}}{\sqrt{5}} = 8.07m\]
+
 //latexmath:[\[{SS'}_{\text{LOD}} = \frac{{SS'}_{c}}{\sqrt{5}} = 8.07m\]]
+ifndef::backend-pdf[]
+\[{SS'}_{\text{LOD}} = \frac{{SS'}_{c}}{\sqrt{5}} = 8.07m\]
+endif::[]
+ifdef::backend-pdf[]
+image::math/sslod2.png[]
+endif::[]
+
+
 [start=3]
-a. Since the model is opaque and has no assigned value for RTAI, the final value for latexmath:[{SS'}_{\text{LOD}}] is 8.07.
+a. Since the model is opaque and has no assigned value for RTAI, the final value for _SS'_~LOD~ is 8.07.
 b. Table 3 1: CDB LOD vs. Model Resolution, tells us that the (finest-LOD) of the model should be nominally inserted at LOD = 6 of the Tile-LOD (assuming its file size limit is not exceeded)
 
 ==== T2DModels

@@ -1296,7 +1296,7 @@ image::math/ss.png[]
 endif::[]
 
 [start=2]
-a.  Since the model is opaque and has no assigned value for RTAI, the final value for _SS’_ is 62.5m.
+a.  Since the model is opaque and has no assigned value for RTAI, the final value for _SS_ is 62.5m.
 b.  Table 3 1: CDB LOD vs. Model Resolution, tells us that the (coarsest LOD) of the model should be nominally inserted at LOD 3 of the Tile-LOD (assuming its file size limit is not exceeded)
 
 [start=2]
@@ -1327,7 +1327,7 @@ image::math/sslod.png[]
 endif::[]
 
 [start=3]
-a.  Since the model is opaque and has no assigned value for RTAI, the final value for _SS’_ is 18.04m.
+a.  Since the model is opaque and has no assigned value for RTAI, the final value for _SS’_~LOD~ is 18.04m.
 b.  Table 3 1: CDB LOD vs. Model Resolution, tells us that the (mid- LOD) of the model should be nominally inserted at LOD = 5 of the Tile-LOD (assuming its file size limit is not exceeded)
 
 [start=3]

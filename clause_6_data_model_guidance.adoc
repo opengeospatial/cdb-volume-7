@@ -1,10 +1,12 @@
 == Data Model Guidance
 
+Please note that whenever there is reference to Volume 1: Core, the full reference is Volume 1: OGC CDB Core Standard: Model and Physical Data Store Structure.
+
 === Guideline: Creating a 3D Model for a Powerline Pylon
 
 _Formerly Annex A.1 Volume 2 of the CDB Best Practice_
 
-The goal of this guidance is to model a typical high voltage electrical pylon resembling the one in the following figure. This guideline is based on version 3.1 of the CDB Best Practice, but is applicable to version 3.0 as well footnote:[See the OGC CDB Best Practice. This document is version 3.x of the CDB specification as submitted to the OGC].
+The goal of this guidance is to model a typical high voltage electrical pylon resembling the one in the following figure. This guidance is based originally on CDB version 3.1 prior to submission to the OGC, but is applicable to version 3.0 as well footnote:[See the OGC CDB Best Practice. That document is version 3.x of the CDB specification as orignally submitted to the OGC and is the basis for the formal, OGC Member approved CDB Standard and Best Practices starting at OGC Version 1.0].
 
 image::images/image1.jpeg[Electrical Pylon.jpeg,width=300,height=400]
 
@@ -117,9 +119,9 @@ As a result of the above tables, a CDB-compliant Powerline Network dataset requi
 
 ==== Generation of HGT
 
-The HGT attribute represents a special case because table 5-47 suggests that the attribute is optional while, in fact, it should always be present. If you carefully read its description in paragraph 5.3.1.2.3.17, you realize that HGT is required in both the line and figure point features of the Powerline Network.
+The HGT attribute represents a special case because table 5-47 in Volume 1 suggests that the attribute is optional while, in fact, it should always be present. If you carefully read its description in paragraph 5.3.1.2.3.17, you realize that HGT is required in both the line and figure point features of the Powerline Network.
 
-For line features, HGT represents the average height above ground of the powerline when no MODL is specified, as suggested by the discussion about HGT in section 5.3.1.17 of the CDB Standard Volume 1: OGC CDB Core Standard: Model and Physical Data Store Structure In the figure point features, HGT represents the height above ground of the pylon, whether or not a MODL is provided. In either file, when MODL is supplied, HGT represents the height of the 3D model above the ground.
+For line features, HGT represents the average height above ground of the powerline when no MODL is specified, as suggested by the discussion about HGT in section 5.3.1.17 of the Volume 1: Core. In the figure point features, HGT represents the height above ground of the pylon, whether or not a MODL is provided. In either file, when MODL is supplied, HGT represents the height of the 3D model above the ground.
 
 You should read guideline (6.3 – old Annex A.3) for a complete discussion about HGT
 
@@ -258,7 +260,7 @@ endif::[]
 
 ==== Recommendation
 
-*Refrain from using AHGT*. There are several advantages to leave this flag to false. First, it facilitates the creation of CDB datasets that are independent of each other. When the Z coordinate (altitude) of a feature is relative to the ground, the elevation dataset can be updated without the need to re-compute and update all features that have an absolute altitude.
+*Refrain from using AHGT*. There are several advantages to leave this flag set to false. First, it facilitates the creation of CDB datasets that are independent of each other. When the Z coordinate (altitude) of a feature is relative to the ground, the elevation dataset can be updated without the need to re-compute and update all features that have an absolute altitude.
 
 Second, when a feature has an absolute altitude, it is possible that it will end up being _displayed_ below the ground by a given client. How is this possible? Isn’t it an error in the data store itself? No, this is not an error. It is perfectly possible to create content that is valid and – still – produce an incorrect result at the client level. Consider a feature that is positioned with an absolute height in a valley between two mountains of a high resolution terrain profile. At coarse LOD of terrain elevation, the valley and the mountains may (and will) be flattened producing a terrain skin that may no longer pass underneath the feature. Now imagine a client that uses that coarse LOD of elevation to create a terrain skin and then draw the feature at its absolute altitude, which happen to be underneath the terrain skin. The feature will not be visible or will be partially occluded by the terrain.
 
@@ -284,9 +286,9 @@ Beside is a typical Horizontal Axis Wind Turbine. The components of interest are
 * Blade
 
 
-Looking at appendix F – CDB Model Components – we note that Turbine is not listed and, consequently, will be proposed for addition to future version of the CDB standard.
+Looking at appendix F – CDB Model Components – we note that Turbine is not listed and, consequently, will be proposed as an extension to future version of the CDB standard.
 
-The CDB metadata folder provides the proper code for a Wind Turbine, AD010-005 footnote:[As of CDB Specification 3.2, the CDB FDD is no longer provided in the documents to avoid the risk of miscorrelation between the appendix and the metadata. The FDD is now exclusively found in the Metadata folder.]. The code indicates the presence of a man-made point feature.
+The CDB metadata folder provides the proper code for a Wind Turbine, AD010-005 footnote:[As of pre OGC CDB Specification 3.2, the CDB FDD is no longer provided in the documents to avoid the risk of miscorrelation between the appendix and the metadata. The FDD is now exclusively found in the Metadata folder.]. The code indicates the presence of a man-made point feature.
 
 A = Culture
 
@@ -309,7 +311,7 @@ Reference: http://en.wikipedia.org/wiki/Wind_turbine[http://en.wikipedia.org/wik
 
 _Formerly Annex A.5 in the OGC CDB Best Practice, Volume 2._
 
-CDB introduces the concept of the interior of a 3D model. The concept is developed in section 6.18, Model Interior, of the CDB Standard Volume 6: OGC CDB Rules for Encoding Data using OpenFlight. The following text serves as a complement to the standard to understand how the concept has been developed and how model interior is intended to be used.
+CDB introduces the concept of the interior of a 3D model. The concept is developed in section 6.18, Model Interior, of the CDB Best Practice Volume 6: OGC CDB Rules for Encoding Data using OpenFlight. The following text serves as a complement to the standard to understand how the concept has been developed and how model interior is intended to be used.
 
 ==== Relationship between Model Shell and Model Interior
 
@@ -356,7 +358,7 @@ Client applications that are interested in 3D models will typically perform the 
 4. Decide to load the corresponding Interior (or not)
 
 
-Interior datasets exists for both geospecific and geotypical models; hence, all features can be represented by a 3D model and all 3D models can have a separately modeled interior. Note the symmetry between the file names of shell and interior datasets. For geospecific models encoded as OpenFlight, the names of geometry files are…
+Interior datasets exists for both geospecific and geotypical models. Hence, all features can be represented by a 3D model and all 3D models can have a separately modeled interior. Note the symmetry between the file names of shell and interior datasets. For geospecific models encoded as OpenFlight, the names of geometry files are…
 
 * GeoCell_D30**0**_S001_T001_Lxx_Ux_Rx_FeatureCode_FSC_MODL.flt
 * GeoCell_D30**5**_S001_T001_Lxx_Ux_Rx_FeatureCode_FSC_MODL.flt

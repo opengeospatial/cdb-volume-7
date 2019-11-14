@@ -1,3 +1,6 @@
 == Conventions
 
 This section provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+
+
+Hmm....this section is empty.  Should we remove it in V1.2?

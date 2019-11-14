@@ -35,7 +35,6 @@ The following organizations submitted this Document to the Open Geospatial Conso
 * Envitia, Ltd
 * Glen Johnson, OGC Individual Member
 * KaDSci, LLC
-* Laval University
 * Open Site Plan
 * University of Calgary
 * UK Met Office

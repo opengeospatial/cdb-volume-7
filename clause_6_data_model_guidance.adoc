@@ -388,7 +388,7 @@ image::images/image10.png[image,width=900]
 
 *Figure A‑5: UHRB Association Diagram*
 
-The third diagram, in Figure A‑6 below, presents the Object Model proposed by CDB Model Interior objects. The UML diagram is both the class and association diagram of CDB zones listed in table 6-27 of section 6.18.5 of CDB 3.1.
+The third diagram, in Figure A‑6 below, presents the Object Model specified by the CDB Model Interior objects. The UML diagram is both the class and association diagram of CDB zones listed in table 6-27 of section 6.18.5 of CDB 3.1.
 
 image::images/figureA_6.png[image,width=800]
 *Figure A‑6: CDB Model Interior Object Model*

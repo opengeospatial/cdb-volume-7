@@ -1,3 +1,5 @@
+This is a document that is nine months old that was created when Gobe / and or OGC staff made the original conversion from CDB to asciidoc.  The current work that Carl is using is in a document titled standard_document.adoc.  I believe we (Carl?) should delete this document.
+
 _________________________________________________________________________
 *Open Geospatial Consortium *
 

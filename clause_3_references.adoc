@@ -1,7 +1,7 @@
 == References
 
 
-For ease of editing and review, the standard has been separated into 12 Volumes and a schema repository.
+For ease of editing and review, the standard has been separated into 14 Volumes and a schema repository.
 
 * Volume 0: OGC CDB Companion Primer for the CDB standard. (Best Practice)
 * Volume 1: OGC CDB Core Standard: Model and Physical Data Store Structure. The main body (core) of the CBD standard (Normative).
@@ -16,3 +16,5 @@ For ease of editing and review, the standard has been separated into 12 Volumes 
 * Volume 10: OGC CDB Implementation Guidance (Best Practice).
 * Volume 11: OGC CDB Core Standard Conceptual Model (Normative)
 * Volume 12: OGC CDB Navaids Attribution and Navaids Attribution Enumeration Values (Best Practice)
+* Volume 13: OGC CDB Optional Geopackage Extension [???? check document title match]
+* Volume 14: OGC CDB Optional Multi-Spectral Extension [???? check document title match]

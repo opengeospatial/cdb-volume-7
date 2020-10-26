@@ -6,7 +6,7 @@ Please note that whenever there is reference to Volume 1: Core, the full referen
 
 _Formerly Annex A.1 Volume 2 of the CDB Best Practice_
 
-The goal of this guidance is to model a typical high voltage electrical pylon resembling the one in the following figure. This guidance is based originally on CDB version 3.1 prior to submission to the OGC, but is applicable to version 3.0 as well footnote:[See the OGC CDB Best Practice. That document is version 3.x of the CDB specification as orignally submitted to the OGC and is the basis for the formal, OGC Member approved CDB Standard and Best Practices starting at OGC Version 1.0].
+The goal of this guidance is to model a typical high voltage electrical pylon resembling the one in the following figure. This guidance is based originally on CDB version 3.1 prior to submission to the OGC, but is applicable to version 3.0 as well footnote:[See the OGC CDB Best Practice. That document is version 3.x of the CDB specification as originally submitted to the OGC and is the basis for the formal, OGC Member approved CDB Standard and Best Practices starting at OGC Version 1.0].
 
 image::images/image1.jpeg[Electrical Pylon.jpeg,width=300,height=400]
 

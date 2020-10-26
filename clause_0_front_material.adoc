@@ -7,20 +7,15 @@ Please note that the term “lineal” has been replaced with the term “line�
 
 Please note that the term “areal” has been replaced with the term “polygon” throughout this document.
 
-
-
 [big]*ii.    Keywords*
 
 The following are keywords to be used by search engines and document catalogues.
 
-ogcdoc, OGC document,  ogcdoc,  cdb, models, guidance, simulation
+ogcdoc, OGC document, cdb, models, guidance, simulation
 
 [big]*iii.   Preface*
 
-
 This document contains material from Annex A in the original CDB 3.2 specification submission to the OGC. These sections provide guidance for model builders to build and maintain model content in a CDB data store.
-
-
 
 Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.
 

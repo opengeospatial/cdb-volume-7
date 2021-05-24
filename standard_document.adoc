@@ -9,6 +9,7 @@
 :numbered:
 :sectanchors:
 :source-highlighter: coderay
+:stem:
 
 = {title}
 

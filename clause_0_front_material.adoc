@@ -27,13 +27,11 @@ The following organizations submitted this Document to the Open Geospatial Conso
 
 * CAE Inc.
 * Carl Reed, OGC Individual Member
-* Envitia, Ltd
-* Glen Johnson, OGC Individual Member
-* KaDSci, LLC
-* Laval University
-* Open Site Plan
-* University of Calgary
 * UK Met Office
+* Ecere Corporation
+* The Joint Staff
+* FSI International Visual Systems
+* SimBlocks LLC
 
 
 The OGC CDB standard is based on and derived from an industry developed and maintained specification, which has been approved and published as OGC Document 15-003: OGC Common Data Base Volume 1 Main Body. An extensive listing of contributors to the legacy industry-led CDB specification is at Chapter 11, pp 475-476 in that OGC Best Practices Document (https://portal.opengeospatial.org/files/?artifact_id=61935 )

@@ -8,5 +8,5 @@
 |2016-11-23 |1.0 |C. Reed |Various |Prepare for publication.
 |2017-11-20 |1.1 |C. Reed |Various |Minor edits for version 1.1. Also added new clauses to make this document consistent with late 3.2 changes as approved by the user community.
 |2019-11-11 |1.2 |C. Reed |Various |Update for version 1.2
-|2023-08-01 |1.3 |D. Graham | Front Matter, history |editorial changes only for V1.3
+|2023-08-01 |1.3 |D. Graham | Front Matter, scope, history |editorial changes only for V1.3
 |===
